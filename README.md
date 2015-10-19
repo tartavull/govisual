@@ -29,6 +29,9 @@ with a fix.
 ##  Want a Feature?
 You can request a new feature by submitting an issue to our [GitHub Repository][github].
 
+## Related projects
+[godepgraph](https://github.com/kisielk/godepgraph)  Exports a Graphviz dot format.
+
 All credits go to Dave Cheney, read his [post](http://dave.cheney.net/2014/11/21/visualising-dependencies)
 
 
