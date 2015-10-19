@@ -1,0 +1,33 @@
+<head>
+<style type="text/css">
+  #container {
+    max-width: 600px;
+    height: 600px;
+    margin: auto;
+  }
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script src="/static/js/sigma.min.js"></script>
+<script src="/static/js/sigma.parsers.json.min.js"></script>
+<script src="/static/js/sigma.layout.forceAtlas2.min.js"></script>
+<script src="/static/js/sigma.plugins.dragNodes.min.js"></script>
+<script>
+// Instantiate sigma:
+s = new sigma({
+  container: 'container',
+  settings: {
+    drawEdges: false
+  },
+});
+  sigma.parsers.json('/data/{{ .package }}', s,
+  function() {
+    s.refresh();
+  });
+  // Initialize the dragNodes plugin:
+var dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
+  // s.startForceAtlas2({worker: true, barnesHutOptimize: false});
+</script>
+</body>
+</html>
